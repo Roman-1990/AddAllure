@@ -15,9 +15,9 @@ public class WebSteps {
         open("https://github.com");
     }
 
-    @Step("Ищем репозиторий {Search}")
-    public void lookingRepository(String Search) {
-        $(".header-search-input").setValue(Search).submit();
+    @Step("Ищем репозиторий {search}")
+    public void lookingRepository(String search) {
+        $(".header-search-input").setValue(search).submit();
     }
 
     @Step("Переходим в репозиторий {repository}")
