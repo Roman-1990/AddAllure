@@ -49,7 +49,7 @@ public class AllureReportsTest {
         );
         step("Проверяем что Issues с номером" + ISSUE_NUMBER + "существует", (s) -> {
             s.parameter("number", ISSUE_NUMBER);
-            $(withText("#1294")).should(Condition.exist);
+            $(withText("#1294")).should(Condition.visible);
         });
     }
 
