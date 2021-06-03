@@ -64,7 +64,22 @@ public class AllureReportsTest {
         $(".header-search-input").click();
         $(".header-search-input").sendKeys(SEARCH);
         $(".header-search-input").submit();
-        $(By.linkText("allure-framework/allure2")).click();
+        $(By.linkText("allure-frameworkallure2")).click();
+        $(withText("Issues")).click();
+        $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
+
+    }
+    //тест с намеренной ошибкой
+    @Test
+    public void testSelenideNoIssue() {
+        //создание лога
+        SelenideLogger.addListener("allure", new AllureSelenide().screenshots(false));
+
+        open(BASE_URL);
+        $(".header-search-input").click();
+        $(".header-search-input").sendKeys(SEARCH);
+        $(".header-search-input").submit();
+        $(By.linkText("allure-frameworkallure2")).click();
         $(withText("Issues")).click();
         $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
 
