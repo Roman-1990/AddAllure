@@ -64,7 +64,7 @@ public class AllureReportsTest {
         $(".header-search-input").click();
         $(".header-search-input").sendKeys(SEARCH);
         $(".header-search-input").submit();
-        $(By.linkText("allure-frameworkallure2")).click();
+        $(By.linkText("allure-framework/allure2")).click();
         $(withText("Issues")).click();
         $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
 
