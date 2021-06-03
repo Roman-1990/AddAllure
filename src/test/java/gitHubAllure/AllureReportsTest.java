@@ -51,7 +51,6 @@ public class AllureReportsTest {
             s.parameter("number", ISSUE_NUMBER);
             $(withText("#1294")).should(Condition.exist);
         });
-
     }
 
     //Selenid тест
@@ -67,6 +66,7 @@ public class AllureReportsTest {
         $(withText("#" + ISSUE_NUMBER)).should(Condition.visible);
 
     }
+
     //тест с намеренной ошибкой
     @Test
     public void testSelenideNoIssue() {
