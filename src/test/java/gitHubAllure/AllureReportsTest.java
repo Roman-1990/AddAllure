@@ -61,12 +61,10 @@ public class AllureReportsTest {
         SelenideLogger.addListener("allure", new AllureSelenide().screenshots(false));
 
         open(BASE_URL);
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys(SEARCH);
-        $(".header-search-input").submit();
+        $(".header-search-input").setValue(SEARCH).submit();
         $(By.linkText("allure-framework/allure2")).click();
         $(withText("Issues")).click();
-        $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
+        $(withText("#" + ISSUE_NUMBER)).should(Condition.visible);
 
     }
     //тест с намеренной ошибкой
@@ -76,12 +74,10 @@ public class AllureReportsTest {
         SelenideLogger.addListener("allure", new AllureSelenide().screenshots(false));
 
         open(BASE_URL);
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys(SEARCH);
-        $(".header-search-input").submit();
+        $(".header-search-input").setValue(SEARCH).submit();
         $(By.linkText("allure-frameworkallure2")).click();
         $(withText("Issues")).click();
-        $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
+        $(withText("#" + ISSUE_NUMBER)).should(Condition.visible);
 
     }
 

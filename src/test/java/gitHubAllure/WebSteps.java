@@ -18,9 +18,7 @@ public class WebSteps {
 
     @Step("Ищем репозиторий {Search}")
     public void lookingRepository(String Search) {
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys(Search);
-        $(".header-search-input").submit();
+        $(".header-search-input").setValue(Search).submit();
 
     }
 
@@ -38,7 +36,7 @@ public class WebSteps {
 
     @Step("Проверяем что Issues с номером {number} существует")
     public void checkIssuesNumberExists(int number) {
-        $(withText("#" + number)).should(Condition.exist);
+        $(withText("#" + number)).should(Condition.visible);
 
     }
 }
