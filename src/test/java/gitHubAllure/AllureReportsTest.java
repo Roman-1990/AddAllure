@@ -36,9 +36,7 @@ public class AllureReportsTest {
         });
         step("Ищем репозиторий" + SEARCH, (s) -> {
             s.parameter("repository", SEARCH);
-            $(".header-search-input").click();
-            $(".header-search-input").sendKeys(SEARCH);
-            $(".header-search-input").submit();
+            $(".header-search-input").setValue(SEARCH).submit(); //замена 3-х позиций (клик / ввод / нажать)
         });
         step("Переходим в репозиторий" + REPOSITORY, (s) -> {
             s.parameter("repository", REPOSITORY);
